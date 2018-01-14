@@ -1434,11 +1434,10 @@ pre .javascript .function {
   display: none;
 }
 .posts-collapse .post-title {
-  margin-left: 60px;
+  margin-left: 100px;
   font-size: 16px;
   font-weight: normal;
   line-height: inherit;
-  left: 20px;
 }
 .posts-collapse .post-title::after {
   margin-left: 3px;
@@ -1824,7 +1823,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ff9305;
+  background: #86ff40;
 }
 .links-of-blogroll {
   font-size: 13px;
