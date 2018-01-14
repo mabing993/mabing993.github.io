@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="mabing993, 又见炊烟" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="编程语言在某种程度上很像朝代，随着时间流逝而一代代更迭，有些编程语言正面临着淘汰，消亡在历史的洪流中。在互联网上，关于C++将要被市场所淘汰的讨论从未停止过，有人说C++是一门过时的编程语言，也有人说，C++是不可替代的。那么，C++过时了吗？C++程序员会不会被淘汰？100offer的观点是：企业对C++的需求势必越来越少，C++程序员全体竞争力也将越来越弱，但C++在很长一段时间都不会彻底消亡">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C++和C++程序员快要被市场淘汰了">
+<meta property="og:url" content="blog.mabing993.com/2016/08/10/C-and-C-programmers/index.html">
+<meta property="og:site_name" content="又见炊烟">
+<meta property="og:description" content="编程语言在某种程度上很像朝代，随着时间流逝而一代代更迭，有些编程语言正面临着淘汰，消亡在历史的洪流中。在互联网上，关于C++将要被市场所淘汰的讨论从未停止过，有人说C++是一门过时的编程语言，也有人说，C++是不可替代的。那么，C++过时了吗？C++程序员会不会被淘汰？100offer的观点是：企业对C++的需求势必越来越少，C++程序员全体竞争力也将越来越弱，但C++在很长一段时间都不会彻底消亡">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="/img/ABUIABACGAAg4eesvQUo0rmy2AUwgAo4-AY!800x800.jpg">
+<meta property="og:image" content="/img/ABUIABACGAAgz_msvQUok9e59wYwgAo40wQ!800x800.jpg">
+<meta property="og:image" content="/img/ABUIABACGAAg-_msvQUo_Kfn5AQwswg4xgU!800x800.jpg">
+<meta property="og:image" content="/img/ABUIABACGAAgoeqsvQUo8PmbzwIw4Ac43gQ!800x800.jpg">
+<meta property="og:updated_time" content="2018-01-14T07:06:56.212Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="C++和C++程序员快要被市场淘汰了">
+<meta name="twitter:description" content="编程语言在某种程度上很像朝代，随着时间流逝而一代代更迭，有些编程语言正面临着淘汰，消亡在历史的洪流中。在互联网上，关于C++将要被市场所淘汰的讨论从未停止过，有人说C++是一门过时的编程语言，也有人说，C++是不可替代的。那么，C++过时了吗？C++程序员会不会被淘汰？100offer的观点是：企业对C++的需求势必越来越少，C++程序员全体竞争力也将越来越弱，但C++在很长一段时间都不会彻底消亡">
+<meta name="twitter:image" content="/img/ABUIABACGAAg4eesvQUo0rmy2AUwgAo4-AY!800x800.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="blog.mabing993.com/2016/08/10/C-and-C-programmers/"/>
+
+
+
+
+
+  <title>C++和C++程序员快要被市场淘汰了 | 又见炊烟</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">又见炊烟</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">炊烟升起，暮色罩大地</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+            文章
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="blog.mabing993.com/2016/08/10/C-and-C-programmers/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="mabing">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="又见炊烟">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">C++和C++程序员快要被市场淘汰了</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-08-10T18:00:00+08:00">
+                2016-08-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>编程语言在某种程度上很像朝代，随着时间流逝而一代代更迭，有些编程语言正面临着淘汰，消亡在历史的洪流中。<br>在互联网上，关于C++将要被市场所淘汰的讨论从未停止过，有人说C++是一门过时的编程语言，也有人说，C++是不可替代的。那么，C++过时了吗？C++程序员会不会被淘汰？<br>100offer的观点是：企业对C++的需求势必越来越少，C++程序员全体竞争力也将越来越弱，但C++在很长一段时间都不会彻底消亡。<br>让我们先来看一组TIOBE的最新数据。<br><img src="/img/ABUIABACGAAg4eesvQUo0rmy2AUwgAo4-AY!800x800.jpg" alt=""><br>以上是TIOBE于2016年8月发布的「编程语言排行榜TOP 18榜单」，根据最新排名，Java再度夺得排行榜冠军，有19.010%用户，对应了100offer在7月6日发布的一文《为何优秀的Java程序员如此难招？》中的观点——<br>从市场上的招聘现状看，Java工程师依然有着其他语言不可取代的竞争优势。<br>C和C++虽然分别拿到了亚军与季军，但是均再次跌破历史最低点，C较上个月下降3.43%，C++较上个月下降1.94%，情况不容乐观。<br><img src="/img/ABUIABACGAAgz_msvQUok9e59wYwgAo40wQ!800x800.jpg" alt=""><br>从TIOBE在8月发布的「前 10 名编程语言长期走势图」能够看出来，C++在21世纪初有着不可动摇的地位，从2004年之后，C++的占比开始不断下跌，对比排在后面的编程语言不再具备优势。<br>100offer也选择了五门编程语言，从企业发出面邀数和最终入职数做出对比分析——<br><img src="/img/ABUIABACGAAg-_msvQUo_Kfn5AQwswg4xgU!800x800.jpg" alt=""><br><img src="/img/ABUIABACGAAgoeqsvQUo8PmbzwIw4Ac43gQ!800x800.jpg" alt=""><br>从企业发给候选人的总面邀占比以及程序员最终入职占比可以看出，java仍是市场上最供不应求的岗位，PHP紧随其后，C++获得的面邀数和offer数没有任何优势。<br>曾经是编程语言「三巨头」之一的C++，为何现如今会面临如此尴尬的局面？</p>
+<p>C++不断衰退的原因<br>1.技术不断更新<br>以前，绝大数需求都要用C++来写，所以C++曾无比兴盛。如今，很多领域都开始有专属它的一门语言，使得实现需求变得更为便捷。<br>众所周知，在20世纪末21世纪初，大部分的个人计算机只有文字排版、图像制作的需求，随着个人计算机的迅速普及，用户基数不断增加，这类需求迅速降低，新增用户们的需求开始转变为信息整合共享。<br>随着互联网的发展，技术不断更新，用户只需简单的「傻瓜式」操作就能满足他们的需求，100offer的候选人柯先生举了在app里加地图的例子——<br>「以前，这类需求没那么容易，要用到 OS 的 UI 功能去集成一个 native 模块才能实现，现在简单多了，用 Google Maps 做网页的 marshup 就行了。C++在面临新技术时，太多功能有局限性，未免显得复杂了，例如，C+＋的静态类型限制太强导致动态功能不足。」<br>2.C++已过巅峰期<br>虽然C++仍在不断更新，但使用C++的员工平均年龄不断增长，能使用C++新项目也越来越少，导致C++已过巅峰期。<br>候选人张先生提出，「C++的语言机制在实际使用有很多问题，导致细节不能运用。举个典型问题，如STL，容易生成错误信息，而Java则不会出现这类问题。所以，很让人沮丧，C++早已过了巅峰期。」<br>此次接受100offer采访的C++程序员们，有70%表示：在初学时，耗费了太多太多精力投入到语言细节中去了。他们如今在思考：这些细节对除C++以外的应用开发到底有没有作用？或者说，作用只是微乎其微？<br>C++还有很强的生命力，只是颠峰早已不在，并且，强大生命力仅是从历史上的兴盛继承而来。无法掩饰的事实是：C++在应用领域开始展现出疲态。<br>3.市场需求减少<br>C++不断衰退的最重要原因是：市场需求减少。<br>从文章开头提供的相关数据可知：需要C++的企业越来越少，这是不争的事实。<br>编程语言的盛衰与市场需求的关系更为明显，并非是编程语言本身的优劣所影响市场需求。我们不得不承认的现实是：会大规模自建基础设施的企业，除了BAT等巨头企业外并不多，时代早已悄然发生改变。<br>即便是新兴的互联网巨头企业们，留给基础设施工程师的职位也不会很多，更别提创业公司了。显然易见，C++更偏向于基础设施方向，随着业务系统开发的门槛持续性降低，C++职位需求势必将越来越低。<br>当C++只剩下大型企业才有大量需求时，当C++对员工要求也越来越苛刻时，当C++程序员的个人发展变得更为艰难时，这门语言自然不可避免会走向衰退。</p>
+<p>C++为什么不会消亡<br>即便C++的市场需求越来越少，但C++是不会消亡的。从世界范围的统计数据来看，C++虽然在不断衰退，但仍多年排在第三名。所以，在很长一段时间，C++都不会跌出前三的宝座。<br>C++为什么不会消亡？100offer采访了多名C++程序员后，得出以下三个观点——<br>1.在游戏和工具领域仍然是主流<br>首先是游戏领域，MiloYip表示——<br>程序员必须使用C++框架/库，如大部分游戏引擎(如Unreal/Source)及中间件(如Havok/FMOD)，虽然有些C++库提供其他语言的绑定，但通常原生的API性能最好、最新。<br>其次是工具领域，无论是网络安全还是杀毒软件，C++仍是主流语言。<br>2.C++程序员的收入没有受到影响<br>根据100offer的后台数据显示，目前通过100offer入职的程序员年薪最高达47万，最低22.4万，C++程序员的收入与其它编程语言的岗位相比处于持平状态，没有出现劣势。<br>随着C++逐渐成为某些特定企业和特定项目所需的语言后，高级C++程序员的收入也会更具有竞争性。<br>3.C++仍具有不可替代性<br>知乎红人vczh说：「我在上大学的时候几乎就只学习C++，后来实习的时候去了微软，结果到了那里才知道，那个组是不用C++的，怎么办？凭借着C++带给我的殷实的功底，我按时完成了老板给我的“两个星期内学会C#和WCF基础知识”的工作，顺利开始工作。」<br>当然，这只是vczh的个人经历，不具有普遍性，但不可否认的是C++仍具有不可替代性。某家创业公司CTO在接受采访时表示：「即便有很多人唱衰C++，但在当代，仍有很多很多项目的目标平台暂时只提供C++编译器的支持，仅从这一点而言，C++是不可能彻底死亡的。」<br>从应用领域来说，C++适用于高性能计算、嵌入式系统、开发服务器软件、游戏、实时系统等，所以，短期内能彻底取代C++语言并不存在。<br>C++在系统、图形、网络等很多领域都是不可替代的，它的光辉岁月让它的死亡速度得以削减。<br>当某一种编程语言在市场需求明显比另一种语言更强时，强需求语言中的缺陷则容易被淡化，衰退的语言则不断被人挑出致命硬伤。这种编程语言之间的比较并不公平，且没有意义。<br>编程语言都是用来表达思想和完成需求的工具，随着时代的发展，不同语言在不同领域都做出了取舍，取代虽然存在，但不是必然现象。C++的需求随着时代发展会不可避免地越来越少，但不可能彻底消失，C++程序员也具有不可替代性，在市场上依旧有着竞争性。</p>
+<p>来源：<a href="https://100offer.com/blog/posts/155" target="_blank" rel="noopener">https://100offer.com/blog/posts/155</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/08/08/Braces-written-in-back-or-next-line/" rel="next" title="代码战争：去死吧！你这个异教徒！">
+                <i class="fa fa-chevron-left"></i> 代码战争：去死吧！你这个异教徒！
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/08/11/Intel-X86-and-IBM-Power/" rel="prev" title="面对X86，Power还有翻盘的机会吗？">
+                面对X86，Power还有翻盘的机会吗？ <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">mabing</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<div class="copyright">
+&copy; 2018 mabing 版权所有<br>
+<a href="http://www.miitbeian.gov.cn" target="_balck">皖ICP备17026213号</a><br>
+<span id="busuanzi_container_site_uv">
+本站访客数：<span id="busuanzi_value_site_uv"></span>
+<span><span id="busuanzi_container_site_pv">
+本站访问量：<span id="busuanzi_value_site_pv"></span>
+<span>
+</div>
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
