@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="mabing993, 又见炊烟" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="以互联网为基础的信息网络是进行国家信息化建设和实现国家信息化战略的基础设施，域名系统是互联网上大部分服务和应用正常运转和实施的基石，是互联网上最为关键的基础网络服务之一，事关互联网乃至国家的稳定和安全，是国家信息化建设的重中之重。通过对域名系统的攻击和利用可以造成巨大危害。伊拉克顶级域名失效事件、利比亚国家顶级域名失效事件等都表明，对域名系统的控制已成为一个有效的网络空间作战手段，可以在非常时期，">
+<meta property="og:type" content="article">
+<meta property="og:title" content="对我国域名系统安全问题的思考">
+<meta property="og:url" content="blog.mabing993.com/2016/11/17/Thoughts-on-the-Security-of-Domain-Name-System-in-China/index.html">
+<meta property="og:site_name" content="又见炊烟">
+<meta property="og:description" content="以互联网为基础的信息网络是进行国家信息化建设和实现国家信息化战略的基础设施，域名系统是互联网上大部分服务和应用正常运转和实施的基石，是互联网上最为关键的基础网络服务之一，事关互联网乃至国家的稳定和安全，是国家信息化建设的重中之重。通过对域名系统的攻击和利用可以造成巨大危害。伊拉克顶级域名失效事件、利比亚国家顶级域名失效事件等都表明，对域名系统的控制已成为一个有效的网络空间作战手段，可以在非常时期，">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="/img/ABUIABACGAAgz9S2wQUogMehywUwiwU4rwI.jpg">
+<meta property="og:updated_time" content="2018-01-14T08:36:53.431Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="对我国域名系统安全问题的思考">
+<meta name="twitter:description" content="以互联网为基础的信息网络是进行国家信息化建设和实现国家信息化战略的基础设施，域名系统是互联网上大部分服务和应用正常运转和实施的基石，是互联网上最为关键的基础网络服务之一，事关互联网乃至国家的稳定和安全，是国家信息化建设的重中之重。通过对域名系统的攻击和利用可以造成巨大危害。伊拉克顶级域名失效事件、利比亚国家顶级域名失效事件等都表明，对域名系统的控制已成为一个有效的网络空间作战手段，可以在非常时期，">
+<meta name="twitter:image" content="/img/ABUIABACGAAgz9S2wQUogMehywUwiwU4rwI.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="blog.mabing993.com/2016/11/17/Thoughts-on-the-Security-of-Domain-Name-System-in-China/"/>
+
+
+
+
+
+  <title>对我国域名系统安全问题的思考 | 又见炊烟</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">又见炊烟</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">炊烟升起，暮色罩大地</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+            文章
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="blog.mabing993.com/2016/11/17/Thoughts-on-the-Security-of-Domain-Name-System-in-China/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="mabing">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="又见炊烟">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">对我国域名系统安全问题的思考</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-11-17T18:00:00+08:00">
+                2016-11-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>以互联网为基础的信息网络是进行国家信息化建设和实现国家信息化战略的基础设施，域名系统是互联网上大部分服务和应用正常运转和实施的基石，是互联网上最为关键的基础网络服务之一，事关互联网乃至国家的稳定和安全，是国家信息化建设的重中之重。<br><img src="/img/ABUIABACGAAgz9S2wQUogMehywUwiwU4rwI.jpg" alt=""><br>通过对域名系统的攻击和利用可以造成巨大危害。伊拉克顶级域名失效事件、利比亚国家顶级域名失效事件等都表明，对域名系统的控制已成为一个有效的网络空间作战手段，可以在非常时期，瘫痪一个国家网络，造成信息孤岛，失去信息优势，丧失战争的主动权。域名系统已成为网络空间作战的重要目标。<br>我国域名系统由于根域名服务器的不可控和域名系统本身的脆弱性，存在巨大的安全隐患。近年来，更是事件频发，对我互联网使用以及国家社会、政治、经济都造成了巨大的影响。因此域名系统相关问题已成为制约我国互联网发展的重要因素。</p>
+<p>互联网域名系统简介<br>域名系统最主要的作用是完成对域名的解析，即把为便于记忆、用来标识互联网上某台计算机或一组计算机的名称，翻译转换为与其对应的IP地址域名系统是非常重要的互联网基础服务。如果没有域名系统，互联网上绝大多数应用，如网页浏览、电子邮件收发，就会因不知道通信对象具体物理地址，而无法正常使用。<br>域名系统DNS(Domain Name System)是由主机名解析方案发展出来的一种新的名字的解析机制。DNS域是一种分布式的层次结构系统，包括一个根域，以空标签(“”)表示。根域的下一级是顶级域，如中国是cn，美国是us，日本是jp 。在顶级域名下，还可以再根据需要定义次一级的域名，如在我国的顶级域名cn下又设立了com、net等。图1为一个域名体系典型层次结构。<br>域名根服务器由美国政府授权的互联网名称与数字分配机构(ICANN)负责管理。为了提高域名解析效率，ICANN在全球部署了591台根服务器及镜像，他们每个都被赋予A到M共13个标号中的一个。其中，全球唯一的主根服务器设置在美国，标号为A，由美国Verisign公司负责运维管理;在北京部署有5台根服务器镜像，编号为L的有两台，编号为F、I、J的各一;在香港部署A、F、I、L、J共5台根服务器镜像。所有编号相同的根服务器都采用同一个IP地址，通过任播(Anycast)技术实现就近访问。标号为B至M的辅助根服务器及镜像定期从主根服务器同步更新全球域名信息，为全球互联网用户提供域名解析服务。</p>
+<p>域名系统安全问题<br>从域名解析过程可以看出，当本地域名服务器缓存不能直接提供域名对应的IP地址时，解析过程必须经过域名根服务器或其镜像服务器。而所有辅根服务器及其镜像需定期从主根服务器同步更新全球域名信息。从技术上看，只需删除主根域名服务器的相关记录，使其国家顶级域名失效，即可实现让一个国家从互联网上消失。<br>当前，全球互联网域名系统中，唯一的主根服务器设在美国，美国政府授权ICANN(The Internet Corporation for Assigned Names and Numbers，互联网名称与数字地址分配机构)进行控制;12个辅根服务器中9个设在美国，其他3个分别设在英国、瑞典和日本。由于其他根服务器及镜像的域名信息均复制于主根服务器，因此美国事实上控制了全球所有国家和地区的域名解析，具备将一个国家从互联网上“抹去”的能力和条件。<br>一旦与某国发生冲突，美国在技术上完全可以停止对该国域名的解析，使其网站无法被外界访问。据报道，伊拉克战争期间，美国终止了伊拉克国家顶级域名IQ的解析；在塔利班政权统治阿富汗时期，美国将阿富汗国家顶级域名AF的管理权授予前流亡政府；2004年4月，由于对顶级域名管理权问题发生分歧，导致利比亚国家顶级域名LY瘫痪，利比亚从互联网上“消失”了3天。<br>当前针对域名系统的攻击手段多种多样，总结起来主要包括以下三类：<br>一是分布式拒绝服务攻击(DDOS)。由于域名系统协议存在体系开放、无认证、无连接和无状态等特点，使其更易受到分布式拒绝服务攻击。针对域名系统的分布式拒绝服务攻击主要采用基于正常域名请求、反弹式、大流量阻塞等三种途径。<br>二是DNS欺骗攻击，通过技术手段向缓存域名服务器注入非法域名解析记录，当用户向被攻击的缓存域名服务器提交域名请求时，将会返回攻击者预先设定的IP地址。<br>三是域名劫持攻击，攻击者控制域名管理密码和域名管理邮箱后，将该域名的NS纪录指向到攻击者可以控制的DNS服务器，然后通过在该DNS服务器上配置相应域名纪录，使用户访问该域名时，实际指向攻击者预先设定的主机。</p>
+<p>我国域名系统的安全现状分析<br>我国域名管理呈现三层体系架构。从2002年起，国务院下发了《中国互联网域名管理办法》、《中国互联网域名体系公告》等一系列指导性文件，规范了我国域名注册和管理工作，目前已形成由工业和信息化部主管的域名管理和注册三层体系架构。<br>第一层是域名注册管理机构，由中国互联网信息中心(CNNIC)负责运行和维护CN域根服务器，授权监督管理各域名注册服务机构;<br>第二层是域名注册服务机构，目前经过CNNIC授权的有上百家，负责面向用户和代理机构受理和审核域名申请;<br>第三层是域名注册代理机构，在域名注册服务机构的授权范围内接受域名申请。在具体的域名解析服务方面，主要依靠域名解析服务商、域名托管商等商业机构进行，他们负责具体提供域名解析相关的设施和各类服务。<br>由于美国对互联网域名系统的实际控制，使得我国域名系统始终处于不自主、不可控的威胁之下。如果美国对我域名系统实施类似针对伊拉克、利比亚等国家攻击手段，造成的后果也将非常严重。<br>通过对CN域的屏蔽，将使所有互联网用户无法访问CN域。虽然可通过获取国内根服务器镜像控制权或者构建替代根域名服务器等应急措施，勉强维持国内用户对CN域的访问能力，但实现难度大，且只能临时被动应对，无法全面解决问题。一旦CN域从因特网上“消失”，将给我国公众网络带来严重后果，造成巨大经济损失和社会影响。<br>根据2014年3月发布的《中国域名服务及安全现状报告》，自2010年5月到2014年2月之间，影响较大的域名攻击事件多达二十余起，波及域名体系的各个层级。相比网络欺诈和病毒攻击等手段，域名系统故障的攻击手段更为隐蔽且防范难度也越大，影响范围更大、损失也更为惨重。其中，影响较大的有2009年发生的“暴风影音事件”、2010年发生的“百度域名劫持事件”、2013年发生的“CN域名攻击事件”，以及2014年1月21日发生的“国内大范围域名解析故障”等。</p>
+<p>提高我国域名系统安全性的几点建议<br>（一）加强国家网络空间安全的战略谋划<br>互联网安全是国家战略层面的问题，必需高度重视。<br>一是尽快制定网络空间国家安全战略。树立网络空间自主、自控、自强的战略意识，加强网络空间安全的战略筹划和顶层设计，制定切实可行的网络空间国家安全战略和规划。<br>二是建立健全互联网安全防护的体制机制。加强国内网络运维、研制和使用等各部门之间的交流与合作，充分利用军地各方力量，提高互联网安全防护和应急处置能力。<br>三是积极参与国际互联网治理。联合立场相近国家，倡导多边、民主、透明的互联网治理机制，打破美对域名等互联网关键系统的控制，鼓励和支持我企业和非政府机构加入互联网治理相关国际组织，在互联网治理相关国际规则制定中争夺话语权。<br>（二）增强国家域名系统的安全防护能力<br>一是建立互联网安全应急替代机制。针对当前互联网受制于人的局面，研究建立切实可行的应对机制，以提升互联网的安全性。尤其针对域名系统，为防止CN域被根服务器删除，应主动应对，建立根服务器替代机制，保障国内用户对CN域的正常访问。<br>二是开展应急演练，以军民融合的方式，进行国家甚至国际级的网络应急响应演练，摸清域名系统影响底数、验证应急响应技术和机制，增强全民应对意识和水平。<br>（三）以网络技术发展为契机，抢占先机<br>一是充分利用全球下一代网络发展契机，建立新框架。我应在发展部署IPv6、物联网的同时，通过一系列创新途径，积极参与新网络体制下域名解析体系的构建，在下一代互联网建设中抢占先机，建立创新的网络协议体系和标准规范，构建有利于我国的域名系统架构;<br>二是充分利用新型网络应用的发展，降低对现有域名体系的依赖，研究利用层叠网等新的网络应用架构，在现有框架内，构建网中网，使上层应用网络有自己的域名和寻址机制，从而降低风险。</p>
+<p>来源：<a href="http://netsecurity.51cto.com/art/201611/521665.htm" target="_blank" rel="noopener">http://netsecurity.51cto.com/art/201611/521665.htm</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/11/17/8-programmer-career-tips/" rel="next" title="8个让程序员追悔莫及的职业建议">
+                <i class="fa fa-chevron-left"></i> 8个让程序员追悔莫及的职业建议
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/11/24/what-to-do-when-you-feel-stuck/" rel="prev" title="当你觉得受困时该怎么办">
+                当你觉得受困时该怎么办 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">mabing</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">37</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<div class="copyright">
+&copy; 2018 mabing 版权所有<br>
+<a href="http://www.miitbeian.gov.cn" target="_balck">皖ICP备17026213号</a><br>
+<span id="busuanzi_container_site_uv">
+本站访客数：<span id="busuanzi_value_site_uv"></span>
+<span><span id="busuanzi_container_site_pv">
+本站访问量：<span id="busuanzi_value_site_pv"></span>
+<span>
+</div>
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
