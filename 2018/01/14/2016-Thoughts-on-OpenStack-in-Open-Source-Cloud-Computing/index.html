@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="mabing993, 又见炊烟" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="开源云计算OpenStack的2016年思考2017-01-01 18:00【51CTO.com原创稿件】今年，OpenStack发布了两个重要版本，一个是4月8日的Mitaka，另一个是10月6日的Newton。不可否认，在目前的云计算市场中，开源云计算是一个非常重要的组成部分，特别是Newton版本的发布，将开源云计算提升到了一个新的高度。OpenStack自推出以来，逐渐得到业界的广泛关注，">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2016 Thoughts on OpenStack in Open Source Cloud Computing">
+<meta property="og:url" content="blog.mabing993.com/2018/01/14/2016-Thoughts-on-OpenStack-in-Open-Source-Cloud-Computing/index.html">
+<meta property="og:site_name" content="又见炊烟">
+<meta property="og:description" content="开源云计算OpenStack的2016年思考2017-01-01 18:00【51CTO.com原创稿件】今年，OpenStack发布了两个重要版本，一个是4月8日的Mitaka，另一个是10月6日的Newton。不可否认，在目前的云计算市场中，开源云计算是一个非常重要的组成部分，特别是Newton版本的发布，将开源云计算提升到了一个新的高度。OpenStack自推出以来，逐渐得到业界的广泛关注，">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="/img/ABUIABACGAAgrtajwwUolLH4uQcwiwU4xgI.jpg">
+<meta property="og:updated_time" content="2018-01-14T10:32:53.905Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="2016 Thoughts on OpenStack in Open Source Cloud Computing">
+<meta name="twitter:description" content="开源云计算OpenStack的2016年思考2017-01-01 18:00【51CTO.com原创稿件】今年，OpenStack发布了两个重要版本，一个是4月8日的Mitaka，另一个是10月6日的Newton。不可否认，在目前的云计算市场中，开源云计算是一个非常重要的组成部分，特别是Newton版本的发布，将开源云计算提升到了一个新的高度。OpenStack自推出以来，逐渐得到业界的广泛关注，">
+<meta name="twitter:image" content="/img/ABUIABACGAAgrtajwwUolLH4uQcwiwU4xgI.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"remove","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="blog.mabing993.com/2018/01/14/2016-Thoughts-on-OpenStack-in-Open-Source-Cloud-Computing/"/>
+
+
+
+
+
+  <title>2016 Thoughts on OpenStack in Open Source Cloud Computing | 又见炊烟</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">又见炊烟</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">炊烟升起，暮色罩大地</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+            文章
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="blog.mabing993.com/2018/01/14/2016-Thoughts-on-OpenStack-in-Open-Source-Cloud-Computing/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="mabing">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="又见炊烟">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">2016 Thoughts on OpenStack in Open Source Cloud Computing</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-14T18:28:49+08:00">
+                2018-01-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>开源云计算OpenStack的2016年思考<br>2017-01-01 18:00<br>【51CTO.com原创稿件】今年，OpenStack发布了两个重要版本，一个是4月8日的Mitaka，另一个是10月6日的Newton。不可否认，在目前的云计算市场中，开源云计算是一个非常重要的组成部分，特别是Newton版本的发布，将开源云计算提升到了一个新的高度。<br><img src="/img/ABUIABACGAAgrtajwwUolLH4uQcwiwU4xgI.jpg" alt=""><br>OpenStack自推出以来，逐渐得到业界的广泛关注，在互联网企业、传统企业包括中字头的国企都有实际使用的案例，而这些都要归功于它的开源理念和自身不断的完善和成长。回顾走过的2016年，我们不妨冷静思考，对OpenStack来个简单盘点。<br>1、在私有云和行业云这个广袤的企业级服务领域里，OpenStack从最先开始的星星之火逐渐行成燎原之势<br>2016年4月，在 OpenStack Mitaka 版本中，代表重要的核心项目社区贡献度的 TC-approved 中，中美两国的企业几乎占据了所有前10名的位置，其中：美国公司占据8席，中国企业占据了2席，华为和创业公司EasyStack迈入核心项目贡献前十 位之列。10月，在OpenStackNewton版本中，共有23家中国企业上榜;而上一个版本Mitaka代码贡献的中国上榜企业是13家，同比增长 高达77%。<br>从企业市场来看，不仅在高要求的金融行业，还是传统行业都有采用OpenStack解决方案的实际案例，到今年底还有5家国字头企业(国家电网、中国电信、中国海油、中国银联、中国邮政储蓄银行)加入。以上典型案例只是OpenStack在中国传统行业企业级市场落地的冰山一角，顺丰速运、联想集 团、清华大学、农信银行、长城宽带、携程网、国家超算广州中心、苏宁云商等企业也加入了OpenStack的用户阵营。从技术层面、市场增长、客户认知方 面，我们可以看到OpenStack在中国企业级市场的开源大势一派明朗，已从最先开始的星星之火逐渐行成燎原之势。<br>2、大部分企业对于OpenStack有热情，但是采用率还较低<br>为何OpenStack没有获得市场的大规模认可?还没有真正在企业生产业务上大面积开花呢?我们不妨辩证和客观的来看下OpenStack的发展。<br>OpenStack作为一个开源项目，自诞生以来就注定要命运多舛。因为它具备互联网模式的重要基因——“免费”，首先面临的是很多传统IT厂商的 困惑和抵触，革命者与既得利益者的战争从来都是硝烟不断。而且企业的IT演进也是渐变式的，不是一蹴而就的，从管理理念到技术架构变革，我们还需要走一段 路。<br>另外,许多人将原因归结于OpenStack的复杂性。目前传统企业里使用VMWARE的仍然居多，一方面是因为VMWARE先入为主占得先机，另 一方面确实简单易用。而OpenStack相对来说，组件众多架构庞大，非常难以部署和驾驭;OpenStack源于开源社区，而开源社区是技术驱动的。 社区提供源代码，但这种代码一般侧重于解决核心问题，解决那些对开发者而言有成就感的问题。而对于非核心的边缘性的功能，比如优化、管理、监测、容灾备份 等开源社区很少提供或者即使有，功能上也很不理想。<br>除了部署复杂性，那么如何运维和运营也是另一个难题。市面上经验丰富的OpenStack技术人员还比较少，导致企业难以获得足够的技术支持。这些 都是企业不愿意采用OpenStack的原因。毕竟传统企业的人才都是跟传统设备和商业产品打交道的多，如何快速掌握和使用开源云平台，那就需要培训和实 践了，所以openstac还需要加强培训和认证服务。<br>3、从技术驱动转向用户需求驱动<br>Mitaka版本重要的提升就是统一的API、更具可管理性，以及通过Heat可横向扩展为大型部署提供更高的性能与稳定性。到了Newton版 本，它提升了对容器的支持，是一个支持虚拟化，裸金属和容器部署形式的云平台，让运营者和开发者使用更方便，使OpenStack在强大的自动化功能下更 容易设置、操作、改变和修正。<br>当软件功能越来越强大之后，原来必须在硬件层面的支持就可以转移到软件上来实施。在OpenStack能完成硬件的容错、协同之后，x86这种性价 比更高的平台已经足以满足严苛的生产环境需要，技术驱动的结果就是企业用户越来越没必要花那么多钱去搞那么多昂贵复杂的专业设备了。<br>目前来看，OpenStack的核心技术已经比较成熟，但商业化方面距离满足企业用户需求还有差距。未来OpenStack要想取得更大的成功，还 要在用户市场教育和行业用户解决方案上下大力气，只有让产品能更进一步贴近用户场景、理解用户的需求，不断推出能满足不同行业用户需求的接地气的解决方案 而不只是一个技术产品，才能更好地适应市场化的竞争机制，同时促进OpenStack生态系统的繁荣。<br>4、NFV的支持<br>2016年，在任何OpenStack 活动中，最大的惊喜和看点莫过于NFV(网络功能虚拟化)，它是一个正在不断发展的网络架构，边缘服务(如负载平衡，缓存，代理，防火墙，IDS/IPS)进行虚拟化，而且取代传统网络设备，在x86服务器上充当软件服务运行。<br>为了支持流行的电信网络配置，VLAN-aware VM允许用户在OpenStack云上运行已有的VNFs，并可使用每个租户的VLAN传输流量。Nova增加了可变的配置设置，使运营者能够重新加载某些配置参数而无需重启节点。同时，Nova的get-me-a-network简化了网络配置，这些都是改变。<br>NFV的使用案例对电信公司意义重大，因为随着设备使用量的持续增长，它们要求协调按需网络服务的能力，而OpenStack和OPNFV工作组可 能成为一个复杂度较小的路径，定义出新的标准。当然NFV的发展离真正成熟还存在一定距离，而OpenStack并不是NFV的全部。<br>5、容器化的潮流<br>从年初Docker公司闪电收购Unikernel Systems，提前扼杀各种“被颠覆”的苗头，蔓延到Kubernetes、Mesos、SwarmKit三家项目在年中掀起的“编排”之争，再到年末 阿里云与Docker牵手一举震撼国内创业市场。容器用一个又一个令人目不暇接的关键词带着背后的技术爆点填满了2016一整年的时间线。<br>当然不可否认，容器化OpenStack可以使OpenStack部署起来更方便，运行效率更高，简化升级和扩容。容器化OpenStack，大大 加快了部署的时间，通常10分钟，就可以完成一次完整功能的部署，这样验证OpenStack各种新功能的代价，就大大减少;容器化后，用户感觉 OpenStack的各个组件，就类似搭积木一样搭建起来，可以根据自己的需求，自由选择相应的模块。遇到问题，寻求帮助，也显得简单很多。因为大家容器 里的东西都是一样的，无非就是外面的配置文件。<br>但是在容器集群管理和企业级需求的支持上，Docker也还有很多地方不成熟，亟待完善。不过容器自身的优越特性，对于OpenStack开发者和运维者来说，吸引力是巨大的。<br>展望：OpenStack的未来<br>明年2月，OpenStack将发布OCATA版本，容器化Openstack将成为一种潮流。未来OpenStack能否走向更大成功的关键，就 在能否持续的扩大自己社区的影响力。在生态方面，OpenStack一方面需要与来自服务器、网络、存储以及软件等领域的开发者一同建立一个更为完善的生 态，一方面需要深刻的将自身技术优势与企业和云服务商的实际需求相联系，进而形成一个相互促进、相互推动的良性关系。<br>不管怎样，我们相信OpenStack是一条曲折但却正确的路，面对变化的浪潮，不要害怕，不要犹豫，冲上去驾驭它，就这样！</p>
+<p>来源：<a href="http://zhuanlan.51cto.com/art/201612/526590.htm" target="_blank" rel="noopener">http://zhuanlan.51cto.com/art/201612/526590.htm</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/01/03/Public-phone-booth-hidden-business-opportunities/" rel="next" title="公用电话亭隐藏的“商机”">
+                <i class="fa fa-chevron-left"></i> 公用电话亭隐藏的“商机”
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<div class="copyright">
+&copy; 2018 mabing 版权所有<br>
+<a href="http://www.miitbeian.gov.cn" target="_balck">皖ICP备17026213号</a><br>
+<span id="busuanzi_container_site_uv">
+本站访客数：<span id="busuanzi_value_site_uv"></span>
+<span><span id="busuanzi_container_site_pv">
+本站访问量：<span id="busuanzi_value_site_pv"></span>
+<span>
+</div>
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
