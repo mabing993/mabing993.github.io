@@ -1428,8 +1428,8 @@ pre .javascript .function {
   position: absolute;
   font-size: 12px;
   left: 20px;
+  right: 20px;
   top: 5px;
-  float: left;
 }
 .posts-collapse .post-comments-count {
   display: none;
@@ -1824,7 +1824,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ff13c6;
+  background: #1a7a81;
 }
 .links-of-blogroll {
   font-size: 13px;
