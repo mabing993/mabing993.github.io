@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="mabing993, 又见炊烟" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="我最近一直在读一些关于养成习惯的好书。消化这些书之后，我的思绪开始向更远的地方游荡，开始思考现在已有的习惯是哪些。其中有些是适用于日常生活，有些只适用于工作。但毫无疑问，有一些习惯与编程紧密相连，这些习惯正是值得去分享的。  不受控制的自动保存。这个习惯已经陪伴了我很多年。即使现在许多IDE不需要保存文件时，我还是会无情地挤压“Ctrl + S”组合键。如果没记错的话，我每次停止打字的时候都做得毫">
+<meta property="og:type" content="article">
+<meta property="og:title" content="七个非常有用的编程习惯">
+<meta property="og:url" content="blog.mabing993.com/2017/07/26/seven-useful-programming-habits/index.html">
+<meta property="og:site_name" content="又见炊烟">
+<meta property="og:description" content="我最近一直在读一些关于养成习惯的好书。消化这些书之后，我的思绪开始向更远的地方游荡，开始思考现在已有的习惯是哪些。其中有些是适用于日常生活，有些只适用于工作。但毫无疑问，有一些习惯与编程紧密相连，这些习惯正是值得去分享的。  不受控制的自动保存。这个习惯已经陪伴了我很多年。即使现在许多IDE不需要保存文件时，我还是会无情地挤压“Ctrl + S”组合键。如果没记错的话，我每次停止打字的时候都做得毫">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-01-15T06:33:50.269Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="七个非常有用的编程习惯">
+<meta name="twitter:description" content="我最近一直在读一些关于养成习惯的好书。消化这些书之后，我的思绪开始向更远的地方游荡，开始思考现在已有的习惯是哪些。其中有些是适用于日常生活，有些只适用于工作。但毫无疑问，有一些习惯与编程紧密相连，这些习惯正是值得去分享的。  不受控制的自动保存。这个习惯已经陪伴了我很多年。即使现在许多IDE不需要保存文件时，我还是会无情地挤压“Ctrl + S”组合键。如果没记错的话，我每次停止打字的时候都做得毫">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"remove","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="blog.mabing993.com/2017/07/26/seven-useful-programming-habits/"/>
+
+
+
+
+
+  <title>七个非常有用的编程习惯 | 又见炊烟</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">又见炊烟</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">炊烟升起，暮色罩大地</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+            文章
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="blog.mabing993.com/2017/07/26/seven-useful-programming-habits/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="mabing">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="又见炊烟">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">七个非常有用的编程习惯</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-26T18:00:00+08:00">
+                2017-07-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>我最近一直在读一些关于养成习惯的好书。消化这些书之后，我的思绪开始向更远的地方游荡，开始思考现在已有的习惯是哪些。其中有些是适用于日常生活，有些只适用于工作。但毫无疑问，有一些习惯与编程紧密相连，这些习惯正是值得去分享的。</p>
+<ol>
+<li>不受控制的自动保存。这个习惯已经陪伴了我很多年。即使现在许多IDE不需要保存文件时，我还是会无情地挤压“Ctrl + S”组合键。如果没记错的话，我每次停止打字的时候都做得毫不犹豫。奇怪的是，它实际上比我同事脸上的笑容更能节省我一天的时间。</li>
+<li>有规律的停止。描述工作最佳状态，一些开发者倾向于说就像在天堂或最终到达了瓦尔哈拉殿堂。我觉得它更像是开启狂战士模式。这是一段美好的时光，但是也应该休息一下主动恢复。所以基本上短时间爆炸会表现更好，但要确保有规律的停止。长时间呆在一个区域会让感官麻木，从而让大脑更容易陷入循环。</li>
+<li>确保切断所有干扰的来源。当我在做一些非常重要的事情时，我会关掉手机，避免社交媒体或者任何其他媒体，对于音乐会有一个小小的例外。但是，要把一切都应用在健康的极限。如果你有孩子，当需要集中注意力时，把他们锁在地下室听起来似乎很有吸引力，但从长远来看，并不是一个好主意。</li>
+<li>总是尝试从心里的目标出发。有人说可视化的力量是无价的，它可以帮助我们确定今天的目标，最终在一天结束时减少或消除挫折和失望。所以，当你在做某件事的时候，一定要确切地知道你想要创造的是什么。这听起来可能很明显，但实际上这是一个经常被忽略的步骤。</li>
+<li>定期训练。对我来说是一个非常好的习惯，虽然去健身房是另一个好习惯，但在这篇文章中，我更担心的是一个人的实际编程能力。我喜欢偶尔解决一些编程练习题，以保持我的锐利，它可能对支付我的账单没有什么帮助，但将来一定会得到补偿。</li>
+<li>从编写测试用例开始编写任何代码。这是我最近尝试的一个习惯，也与先前的观点有关，因为它可以帮助我在开始之前看到我的目的地。它显然使最终的结果更安全，但是作为额外的回报，它常常有助于设计和注释代码。令我惊讶的是，很少有开发人员赞同这种观点。</li>
+<li>避免“未来编程”。这是另一个新的习惯。从小处做起，逐渐成长。早起编写代码时，我想让它从一开始就变得完美，覆盖所有可能的边界情况，几乎为我的后代使用做准备。然而随着时间的推移，我意识到它经常导致复杂的代码库，高的时间消耗，而且在大多数情况下，我的程序在同一时间做了一切又什么也没做。<br>如果你喜欢的话，这里的任何习惯你都可以尝试去培养。在我的编程之路上，它们非常有用，但养成这些习惯并不是一蹴而就的。在生活当中培养一个习惯，最好并且唯一的方法就是开始采用它，然后不知不觉就养成了。</li>
+</ol>
+<p>来源：<a href="http://geek.csdn.net//news/detail/227603" target="_blank" rel="noopener">http://geek.csdn.net//news/detail/227603</a><br>英文原文：<a href="https://dev.to/binarforge/seven-useful-programming-habits" target="_blank" rel="noopener">https://dev.to/binarforge/seven-useful-programming-habits</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/07/16/do-you-remember-windows-xp-desktop-picture/" rel="next" title="还记得Windows XP经典桌面吗">
+                <i class="fa fa-chevron-left"></i> 还记得Windows XP经典桌面吗
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/07/31/China-s-epic-programmer/" rel="prev" title="中国史诗级程序员">
+                中国史诗级程序员 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<div class="copyright">
+&copy; 2018 mabing 版权所有<br>
+<a href="http://www.miitbeian.gov.cn" target="_balck">皖ICP备17026213号</a><br>
+<span id="busuanzi_container_site_uv">
+本站访客数：<span id="busuanzi_value_site_uv"></span>
+<span><span id="busuanzi_container_site_pv">
+本站访问量：<span id="busuanzi_value_site_pv"></span>
+<span>
+</div>
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
