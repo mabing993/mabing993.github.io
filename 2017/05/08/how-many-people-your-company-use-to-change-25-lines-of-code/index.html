@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="mabing993, 又见炊烟" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="下午两点接到客户微信信息，问能否将提供的游戏礼包码用于他们校园网营业厅发放，办理业务便发放。由于我这不确认哪些能用哪些不能用所以第一时间将信息反馈给了技术负责人。问技术的建议要不要提供，同时这种在线下店发放的效果不如直接推线上好，所以我犹豫要不要搞。就在这时客户说要20个礼包兑换码，我心里暗自笑了笑。“好少啊！”心想，这送20个感觉好有面，强化客户关系。而就在同时技术已经整理完Excel并改完了线">
+<meta property="og:type" content="article">
+<meta property="og:title" content="改25行代码，贵公司要动用多少人">
+<meta property="og:url" content="blog.mabing993.com/2017/05/08/how-many-people-your-company-use-to-change-25-lines-of-code/index.html">
+<meta property="og:site_name" content="又见炊烟">
+<meta property="og:description" content="下午两点接到客户微信信息，问能否将提供的游戏礼包码用于他们校园网营业厅发放，办理业务便发放。由于我这不确认哪些能用哪些不能用所以第一时间将信息反馈给了技术负责人。问技术的建议要不要提供，同时这种在线下店发放的效果不如直接推线上好，所以我犹豫要不要搞。就在这时客户说要20个礼包兑换码，我心里暗自笑了笑。“好少啊！”心想，这送20个感觉好有面，强化客户关系。而就在同时技术已经整理完Excel并改完了线">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-01-15T05:52:29.468Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="改25行代码，贵公司要动用多少人">
+<meta name="twitter:description" content="下午两点接到客户微信信息，问能否将提供的游戏礼包码用于他们校园网营业厅发放，办理业务便发放。由于我这不确认哪些能用哪些不能用所以第一时间将信息反馈给了技术负责人。问技术的建议要不要提供，同时这种在线下店发放的效果不如直接推线上好，所以我犹豫要不要搞。就在这时客户说要20个礼包兑换码，我心里暗自笑了笑。“好少啊！”心想，这送20个感觉好有面，强化客户关系。而就在同时技术已经整理完Excel并改完了线">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"remove","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="blog.mabing993.com/2017/05/08/how-many-people-your-company-use-to-change-25-lines-of-code/"/>
+
+
+
+
+
+  <title>改25行代码，贵公司要动用多少人 | 又见炊烟</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">又见炊烟</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">炊烟升起，暮色罩大地</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+            文章
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="blog.mabing993.com/2017/05/08/how-many-people-your-company-use-to-change-25-lines-of-code/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="mabing">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="又见炊烟">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">改25行代码，贵公司要动用多少人</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-08T18:00:00+08:00">
+                2017-05-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>下午两点接到客户微信信息，问能否将提供的游戏礼包码用于他们校园网营业厅发放，办理业务便发放。由于我这不确认哪些能用哪些不能用所以第一时间将信息反馈给了技术负责人。问技术的建议要不要提供，同时这种在线下店发放的效果不如直接推线上好，所以我犹豫要不要搞。就在这时客户说要20个礼包兑换码，我心里暗自笑了笑。“好少啊！”心想，这送20个感觉好有面，强化客户关系。而就在同时技术已经整理完Excel并改完了线上后台的代码。客户找我确认了发放的步骤，这个事就算是敲定了。整个事情涉及到两个公司，3个人。改了25行代码算注释。总计耗时32分钟。<br>由于过往的经历，很容让人跟HW对比。在HW这种需求基本也会是客户第一时间反馈，以一个同样的场景举个例子。<br>这种涉及到业务的需求先要运营商客户找到一线的产品经理，一线产品经理通过长期合作的机关同事一般为MO或者是MKT。如果这件事情是一个新手，不认识机关的任何一个人，那么这个事直接告吹。认识的话，先打电话一般用espace。但是打这个电话基本上也都是在客户那待了至少一个上午或者是一个下午，开完各种会，处理完杂七杂八的事情，闲来无事的事情处理下客户的非常规性需求。如果不是因为自己认识几个人，跟客户关系还不错，没人会理这件事情。<br>OM/MKT初次遇到这种情况显得措手不及，认识的这小哥真的是会反馈出来各种不一样的需求。暗自感慨某某地区部的这位产品经理真的是懂业务又懂客户，解决了MKT没有需求输入OM没有新案例包装的难题。所以MKT为能够将需求原本还原，先用excel列了一张，一横排写上时间、运营商、需求详细描述，反馈人。需求详细内容包括巴拉巴拉写了一堆。最后发现自己还是对详细情况不是很了解，然后给一线产品经理打电话问：“线下店是怎么回事？这个线下店在哪？。。。”说了不到二十秒，产品经理这时小声说：“稍等，晚上我打给你。现在客户在跟我说话。”晚上9:30一线产品经理终于办完一天事，回到工位处理邮件，espace自动将状态更新为在线。MKT负责人看到情况，第一时间塞上耳机联系了产品经理，聊了30分钟全方位的了解了各部分信息。一线产品经理对这如此深入的调查方式显得搓手不及，全然不知道这么多的问题要如何回答，这就是客户一说。最后产品经理说，不行我约下客户，你出差过来自己问客户吧。MKT人员欣然接受。一线也自然举双手双脚欢迎愿意为客户做事情的研发出差一线，所以MKT出差就这么定了。<br>晚上10:20，产品经理见主管SR（是不是叫SR忘了）还没走，打水期间跟主管聊了这件事情，说道客户有新的创新需求，研发非常积极的配合，想做进一步支撑，申请来一线出差。一线主管笑笑，欢迎啊。后来产品经理将MKT出差审批需要的项目编码和审批的主管邮件发给了MKT，并抄送了MKT的主管。<br>第二天上午，MKT员工都在赶制昨天跟一线初次对标的情况。最后总结成2页PPT说明这件事情，对于运营商的价值，是ICP转型的体现同时也是新的大融合大生态战略方案的重要体现。上午11点的时候，MKT将总结好的内容主送主管，抄送团队相关人。并到主管工位进行了汇报。主管对这样的思路和客户的需求给出了是比较合理的需求，可以进一步跟进，同意MKT员工出差一周详细调研。本次汇报结束MKT员工找研发方案SE勾兑了方案的可实时性，SE对这样的创新方案也非常关注，积极参与到项目讨论，确定了可以实施，并风险不高，但是由于手头项目非常多，建议MKT向PDT经理汇报申请人员支撑。MKT员工考虑，目前只有两页PPT跟PDT经理汇报没有绝对的说服力，经跟SE讨论风险不高，所以决定先去做下详细调研，回来再进行汇报。<br>就这样，MKT员工踏上了雄赳赳气昂昂的调研路。7月份的深圳，暴雨台风不断，MKT员工在深圳机场徘徊了3个小时被通知停飞，然后坐上了大巴跟着所有滞留的乘客到酒店等候通知。到酒店后吃完供应的盒饭，躺到了床上。跟临床的金融创业老总聊聊彼此惆怅一下，这来回天天飞的人生。这时被走廊的砸门声吵到，原来机场通知一小时后飞机起飞。就这样两位天上常客，穿上外套奔向大巴车。<br>凌晨3点，MKT员工来到了公司办事处附近的酒店。放下行李，打开电脑再次过了一遍这两天来整理的内容，加上网络发展背景说明，已经足足有了18页。按照以前自己讲解胶片的时间来看，可以讲一个半小时。在心理演练了一番后合上电脑，看了眼手机已经是凌晨4:50分了。但是怀着对自己的满意，准备睡上几个小时9:30准时赴约。<br>9:30MKT员工与一线产品经理如约到了客户办公室的一间小会议室。可以这么说这个产品经理还算比较给力，至少这次要建的关键客户都在有4个人，一个市场部门，一个网络部门，一个创新部门经理，一个子公司经理。10点人到齐，MKT员工坐在投影前操起自己还有着一些南方口音的标准话开始讲解起了胶片，讲到网络发展趋势的几页时，客户的几个人困的都快趴到桌子上了。最后客户说我们直接讨论方案吧。MKT解释说技术不在，对于当前的情况需要看下这个需求对整个网络能够带来多少受益，或者是做有创新亮点才能驱动研发投入开发。客户这时说，这个需求之前我们已经做过市场调研，但是详细的数据是属于机密信息不能提供给你们，我们初步的测评是年收益1.4个亿。所以这件事情对于我们省级运营商来讲非常有价值，为此我们需要这个平台。另外对于平台应该具备灵活性，能够根据我们的策略进行快速调整。同时一个游戏的时间生命期也就是几个月的时间，我们需要做一些快速的定制以响应市场。对于客户说的市场的数据和定制化的模式，MKT员工从来没有听说过，对于客户如此坚定和明确的需求，反倒搞的MKT员工措手不及。客户当场说那你这能否初步给一个时间呢，这样便于评估业务上线的情况。MKT员工答到：“周期一般3个月以上。”<br>MKT员工对此情况基本判断情况是客户要做这件事的决心非常坚决，后来找产品经理聊。产品经理也说，如果我们响应速度不够快，现有已经在的平台很有可能被搬迁掉。MKT想想此平台在网上的存量不到20套，只有这一个是付费商用的，守住此局点对于产品来讲意义重大，所以在一线的几天跟产品经理对了几次这个产品运行的情况，及客户侧的一些反馈，重新刷新了胶片，返回了总部。<br>回到总部的MKT员工，将这件事情原原本本的汇报给了主管。主管对此大加赞赏，认可方案的价值，并要求将此内容融入版本汇报内容在本月BMT上汇报评审，时间是两周后。MKT员工随后又找了PDT产品经理说了，这个特性对于此商用局的意义。产品经理认可，并积极的推动SE投入分析。<br>两周后BMT对此内容的结论是，虽然有价值但是对网络设备销售看不到关键技术控制点，特性不同意纳入版本开发。但是PDT经理对于这样的结论判断是，这是领导站在领导的角度考虑，但是回头不还是会考核我的KPI，特性要做，局要守住。所以这个特性让SE分析，继续落地，汇报的BMT后续汇报的时候将此内容换种说法，这是MKT跟PDT两方面达成的最后结论。<br>但是公司卡死的不是人力投不投，是版本开发的节奏，不管是你改一行代码，还是改了1万行代码，必须要走版本测试必须要走发布评审。对于新增特性尤其严格，主要准备的相应20+配套发布材料，更新版本说明手册，特性列表，中英文资料，客户营销资料。转眼两个月过去了。版本出来了。<br>当产品经理得到发布通知的时候，通知了下客户版本更新的内容已经包括了他要的内容。客户这时心里想，我这已经在测试另外一个平台了。但是出于礼节说，那上线试试吧。结果上线运行，由于前端没什么内容，只是用户新拿到了几个兑换码，然而这已经与自己提出这件事后过去了4个月。这时候网络热推的是迪丽热巴代言的《神话永恒》。<br>客户想想这个刚上线的游戏运营平台，可以一下给500个兑换码。而且不要任何费用，响应速度还这么快。HW这个平台如此响应速度还需要单独的人力维护。后面这个平台还是撤了吧，投一个人单独跟这个新平台对接。<br>PDT，MKT瞒着BMT搞了个事情，结果还是唯一的一个商用局点被搬掉了。他们对此进行了复盘总结，最后归结为自己产品的商业模式不如竞争对手。竞争对手是给客户钱，我们是让客户掏钱，所以从一开始就输掉了这场比赛，这不是说反应速度的问题还是商业模式有问题。MKT大半年基本上忙活这个东西，由于这个商用局被搬迁，所以自己的考评被主管打了B。正值公司派研发员工，被派到东南亚MKT常驻。周边做这个项目的20几个人听说这个事情，倍感惊讶“他去马来啦？！怪不得最近没他的动静了”。<br>类似的事情不止HW有，很多大公司都存在类似的现象。还记得当年微软一个高级工程师说自己在微软一年才写了14行代码，而中间涉及到参与的人不下20个。当时这篇文章异常火爆尤其是在码农圈。而对于一年在HW只写了几千行代码的码农来说，自己的效率真的是高太多了。所以也坚信了自己所处的公司是世界一流的公司。<br>效率高不高每个人的评价不一样，但是不管是在大公司还是在小公司，对于个人来讲自己最终衡量的是每一分钟的付出是否有值得的回报，这不光是钱的问题，还包括自己对自己的定位与追求。</p>
+<p>文／ouzar（简书作者）<br>来源：<a href="http://www.jianshu.com/p/f41f30581d65" target="_blank" rel="noopener">http://www.jianshu.com/p/f41f30581d65</a><br>著作权归作者所有，转载请联系作者获得授权，并标注“简书作者”。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/05/05/Top-10-Developer-Crypto-Mistakes/" rel="next" title="开发者常犯的十大加密错误">
+                <i class="fa fa-chevron-left"></i> 开发者常犯的十大加密错误
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<div class="copyright">
+&copy; 2018 mabing 版权所有<br>
+<a href="http://www.miitbeian.gov.cn" target="_balck">皖ICP备17026213号</a><br>
+<span id="busuanzi_container_site_uv">
+本站访客数：<span id="busuanzi_value_site_uv"></span>
+<span><span id="busuanzi_container_site_pv">
+本站访问量：<span id="busuanzi_value_site_pv"></span>
+<span>
+</div>
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
