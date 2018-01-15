@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="mabing993, 又见炊烟" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="《THe Effective Engineer》的作者Edmond Lau采访了很多硅谷顶级科技公司的顶尖软件工程师。他发现这些给世界带来巨大影响的的工程师们至少有以下5个共同的思维模式。看看你是否具备？勇于去研究你不懂的代码一般人都不愿意去研究自己不曾接触过的代码，很多人都没有尝试就放弃了。如果你经常去研究你没有接触过的代码，你就会越来越熟悉不同的代码结构和设计模式。现在人们很容易就接触到优秀的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="顶尖程序员的五种思维模式">
+<meta property="og:url" content="blog.mabing993.com/2017/06/19/Top-programmers-five-modes-of-thinking/index.html">
+<meta property="og:site_name" content="又见炊烟">
+<meta property="og:description" content="《THe Effective Engineer》的作者Edmond Lau采访了很多硅谷顶级科技公司的顶尖软件工程师。他发现这些给世界带来巨大影响的的工程师们至少有以下5个共同的思维模式。看看你是否具备？勇于去研究你不懂的代码一般人都不愿意去研究自己不曾接触过的代码，很多人都没有尝试就放弃了。如果你经常去研究你没有接触过的代码，你就会越来越熟悉不同的代码结构和设计模式。现在人们很容易就接触到优秀的">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-01-15T06:24:47.679Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="顶尖程序员的五种思维模式">
+<meta name="twitter:description" content="《THe Effective Engineer》的作者Edmond Lau采访了很多硅谷顶级科技公司的顶尖软件工程师。他发现这些给世界带来巨大影响的的工程师们至少有以下5个共同的思维模式。看看你是否具备？勇于去研究你不懂的代码一般人都不愿意去研究自己不曾接触过的代码，很多人都没有尝试就放弃了。如果你经常去研究你没有接触过的代码，你就会越来越熟悉不同的代码结构和设计模式。现在人们很容易就接触到优秀的">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"remove","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="blog.mabing993.com/2017/06/19/Top-programmers-five-modes-of-thinking/"/>
+
+
+
+
+
+  <title>顶尖程序员的五种思维模式 | 又见炊烟</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">又见炊烟</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">炊烟升起，暮色罩大地</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+            文章
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="blog.mabing993.com/2017/06/19/Top-programmers-five-modes-of-thinking/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="mabing">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="又见炊烟">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">顶尖程序员的五种思维模式</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-19T18:00:00+08:00">
+                2017-06-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>《THe Effective Engineer》的作者Edmond Lau采访了很多硅谷顶级科技公司的顶尖软件工程师。他发现这些给世界带来巨大影响的的工程师们至少有以下5个共同的思维模式。看看你是否具备？<br>勇于去研究你不懂的代码<br>一般人都不愿意去研究自己不曾接触过的代码，很多人都没有尝试就放弃了。如果你经常去研究你没有接触过的代码，你就会越来越熟悉不同的代码结构和设计模式。现在人们很容易就接触到优秀的开源代码资源，你可以很方便的就下载下来做一些改动或者调试，去研究为什么代码可以这么写。<br>除了代码之外，很多人对于陌生的工作内容也会感到恐惧。每次换工作的时候，你可能都会遇到新公司的工作内容和以前工作的内容不一样的情况，以至于刚开始的时候工作效率没有以前那么高。很多人甚至觉得，他们是不是骗了面试官。<br>其实，大家都是在学习的过程中。在一个陌生的领域，没有人从一开始就是大神。如果你想变得越来越好，无论是写代码，与人沟通或者其它的技能，都是需要投入时间去学习的。<br>精通代码调试(debug)<br>很多人在写代码的过程中，经常会有的一个问题就是：为什么我写出来的代码不能运行？为什么运行的结果不是我想要的？ 几乎所有的程序员写代码都不是一遍就能写好的。但是顶尖的程序员非常快的就明白自己代码的问题可能是什么。<br>这是一个很重要的能力，但是偏偏学校里不教，面试的时候考官也不经常提及。<br>那么怎么去调试代码呢？其实核心就是以下几个方法：<br>不妨先猜测一下到底发生了什么。 假设你的猜测是对的，想想你的猜测会导致程序有什么结果。试着观察这些结果有没有异常的地方。<br>如果你没有发现异样，那么说明你的猜测就是对的。<br>如果你发现了异样，那么说明你的猜测是错的，接下来换一个猜测试试。<br>对于顶尖程序员来说，这个过程在脑海中就是电光火石的一瞬间。只要你解决的问题足够多，你做出来的猜测就会越准确。<br>至于如何发现异样？你就需要有一套自己的工具或者方法论了。最简单的就是在代码里输出日志来判断。但是这是比较笨的办法，你需要去接触一些高级的工具或者直接带有Debug功能的编辑器。<br>重视能够节约时间的工具<br>打败人类的AlphaGo每天可以进行上百万局的下棋训练，我们人类一万个小时的训练却需要10年之久。也就是说，电脑运行几分钟，可能就等于人类工作好几年。<br>曾经在Facebook担任技术总监的Bobby Johnson描述过，高效率的程序员都把时间花在制作工具上。<br>很多人也认为工具是很重要的，但是他们并没有花时间去制作、整合自己的工具。但是，Jonson团队最出色的员工耗费了他们1/3的时间在工具制作上，这些工具可以用来发布代码，监控系统，以及能让他们花更少的时间去做更多事情。<br>总之，不要花时间去做机器可以代替你去做的事情。<br>优化你的迭代速度<br>假设你要花12秒钟去搜索某个函数是在哪里定义的。再假设你每天做这个动作60次，那么你每天就要花12分钟去搜索函数定义。<br>如果你用一个好一点的编辑器，每次找到函数定义只要2秒钟，那么你每天就会节约10分钟。每年你就可以节约40个小时。如果你能找到3个这样的场景去优化一下，那么你每年可以节约一个月的时间。<br>想想这一个月你可以做多少有意义的事情。再假如你在调试一个App的bug的时候，改完一次代码都需要重启一下App，然后点击4、5次才能看到bug有没有改好。那么你是不是可以先花几分钟设置以下，让App一启动就转到显示Bug的页面呢？<br>千万不要小看这些琐碎的细节，改善它们的回报是巨大。<br>系统性的思考方式<br>当你在写代码的时候，你很容易就认为只要你按照需求实现了指定的功能，你的代码就写完了。但是这其实只是冰山一角。<br>任何没有发布到生产环境的代码都不会产生任何价值。<br>如果想写出真正有影响力的代码，你需要从整个系统去理解你的工作：<br>你的代码和其他人写的代码在功能上是什么关系？<br>你有没有好好测试你的代码？或者其他人是否很容易测试你的代码？<br>为了部署你的代码，线上生产环境的代码是不是需要改动？<br>新的代码会不会影响到已经运行的代码？<br>在新的功能下，你的目标用户的行为是不是你期望的？<br>你的代码有没有产生商业上的影响？<br>这些问题都不是很容易就能回答的，但是在写代码的时候，你需要明白你的代码最后会不会得到最好的结果。<br>以上是顶尖程序员的一些基本思维方式，哪些是你具备并应用的？哪些是你想到而没有做到的？</p>
+<p>来源：<a href="https://mp.weixin.qq.com/s?__biz=MzA5MzY4NTQwMA==&amp;mid=2650997574&amp;idx=1&amp;sn=5cd9470e16ab9b0f5d24ab8d4e26b597&amp;chksm=8badb0b1bcda39a7f3afe35ac6966dc004e419f719841f15960001fcb3a090cb434b07a05d09" target="_blank" rel="noopener">https://mp.weixin.qq.com/s?__biz=MzA5MzY4NTQwMA==&amp;mid=2650997574&amp;idx=1&amp;sn=5cd9470e16ab9b0f5d24ab8d4e26b597&amp;chksm=8badb0b1bcda39a7f3afe35ac6966dc004e419f719841f15960001fcb3a090cb434b07a05d09</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/05/30/did-amazon-just-kill-open-source/" rel="next" title="亚马逊是否在扼杀开源">
+                <i class="fa fa-chevron-left"></i> 亚马逊是否在扼杀开源
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/06/20/How-old-age-programmers-crossed-the-35-55-age-threshold/" rel="prev" title="大龄程序员如何迈过35-55的年龄槛">
+                大龄程序员如何迈过35-55的年龄槛 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<div class="copyright">
+&copy; 2018 mabing 版权所有<br>
+<a href="http://www.miitbeian.gov.cn" target="_balck">皖ICP备17026213号</a><br>
+<span id="busuanzi_container_site_uv">
+本站访客数：<span id="busuanzi_value_site_uv"></span>
+<span><span id="busuanzi_container_site_pv">
+本站访问量：<span id="busuanzi_value_site_pv"></span>
+<span>
+</div>
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
